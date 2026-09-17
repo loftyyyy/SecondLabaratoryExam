@@ -1,0 +1,144 @@
+PS C:\Users\User\Documents\OS\2ndLabExam> python .\SecondLabaratoryExam.py
+
+============================================================
+            OPERATING SYSTEMS CONCEPTS SIMULATOR
+============================================================
+1. CPU Scheduling Simulation
+2. Banker's Algorithm (Safe State Check)
+3. Exit
+Select an option (1-3): 1
+
+============================================================
+                 CPU SCHEDULING SIMULATION
+============================================================
+Choose a scheduling algorithm:
+  1. First Come First Serve (FCFS)      - Non-Preemptive
+  2. Round Robin (RR)                    - Preemptive
+Enter choice (1-2): 1
+Enter number of processes: 4
+
+--- Process P1 ---
+  Arrival time: 0
+  Burst time: 5
+
+--- Process P2 ---
+  Arrival time: 1
+  Burst time: 3
+
+--- Process P3 ---
+  Arrival time: 2
+  Burst time: 8
+
+--- Process P4 ---
+  Arrival time: 3
+  Burst time: 6
+
+Gantt Chart:
+  P1   |  P2   |  P3   |  P4
+0          5        8       16       22
+
+PID   Arrival   Burst   Completion  Waiting   Turnaround
+P1    0         5       5           0         5
+P2    1         3       8           4         7
+P3    2         8       16          6         14
+P4    3         6       22          13        19
+
+Average Waiting Time    : 5.75
+Average Turnaround Time : 11.25
+
+Press Enter to return to the main menu...
+
+============================================================
+            OPERATING SYSTEMS CONCEPTS SIMULATOR
+============================================================
+1. CPU Scheduling Simulation
+2. Banker's Algorithm (Safe State Check)
+3. Exit
+Select an option (1-3): 1
+
+============================================================
+                 CPU SCHEDULING SIMULATION
+============================================================
+Choose a scheduling algorithm:
+  1. First Come First Serve (FCFS)      - Non-Preemptive
+  2. Round Robin (RR)                    - Preemptive
+Enter choice (1-2): 2
+Enter number of processes: 4
+
+--- Process P1 ---
+  Arrival time: 0
+  Burst time: 5
+
+--- Process P2 ---
+  Arrival time: 1
+  Burst time: 3
+
+--- Process P3 ---
+  Arrival time: 2
+  Burst time: 8
+
+--- Process P4 ---
+  Arrival time: 3
+  Burst time: 6
+
+Enter Time Quantum: 2
+
+Gantt Chart:
+  P1   |  P2   |  P3   |  P1   |  P4   |  P2   |  P3   |  P1   |  P4   |  P3   |  P4   |  P3
+0          2        4        6        8       10       11       13       14       16       18       20       22
+
+PID   Arrival   Burst   Completion  Waiting   Turnaround
+P1    0         5       14          9         14
+P2    1         3       11          7         10
+P3    2         8       22          12        20
+P4    3         6       20          11        17
+
+Average Waiting Time    : 9.75
+Average Turnaround Time : 15.25
+
+Press Enter to return to the main menu...
+
+============================================================
+            OPERATING SYSTEMS CONCEPTS SIMULATOR
+============================================================
+1. CPU Scheduling Simulation
+2. Banker's Algorithm (Safe State Check)
+3. Exit
+Select an option (1-3): 2
+
+============================================================
+           BANKER'S ALGORITHM - SAFE STATE CHECK
+============================================================
+Enter number of processes: 5
+Enter number of resource types: 3
+
+Enter the Allocation matrix (5 processes x 3 resources).
+Enter each row as space-separated numbers, e.g.: 0 1 0
+  Allocation for P0: 0 1 0
+  Allocation for P1: 2 0 0
+  Allocation for P2: 3 0 2
+  Allocation for P3: 2 1 1
+  Allocation for P4: 0 0 2
+
+Enter the Maximum matrix (5 processes x 3 resources).
+Enter each row as space-separated numbers, e.g.: 0 1 0
+  Maximum for P0: 7 5 3
+  Maximum for P1: 3 2 2
+  Maximum for P2: 9 0 2
+  Maximum for P3: 2 2 2
+  Maximum for P4: 4 3 3
+
+Enter the Available vector (3 resource types).
+  Available: 3 3 2
+
+Need Matrix:
+P0: [7, 4, 3]
+P1: [1, 2, 2]
+P2: [6, 0, 0]
+P3: [0, 1, 1]
+P4: [4, 3, 1]
+
+System is in a Safe State.
+Safe Sequence: P1 → P3 → P4 → P0 → P2
+
+Press Enter to return to the main menu...
